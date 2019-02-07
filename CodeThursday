@@ -1,1 +1,64 @@
-hh
+#include <stdio.h>
+#include <stdlib.h>
+
+/* We import the type and function definitions for the three linear data
+ * structures presented in the Lecture notes: stacks, queues and lists.
+ * One of these may be useful for the assignment.
+ */
+#include "LibStack.h"
+#include "LibQueue.h"
+#include "LibList.h"
+
+int main(int argc, char *argv[]) {
+Stack stack;
+stack = newStack(1);
+int length;
+int x, y, z,w, counterright, counterleft;
+int min =0;
+int max =0;
+int countposition =0;
+counterright=1;
+counterleft=1;
+scanf("%d", &length);
+
+for(counterright = 1; counterright<length; counterright++){
+scanf("%d", &x);
+	if(counterright == 1){
+		push(x, &stack);
+		continue;
+	}
+	y = pop(&stack);
+	if(x >= y){
+	push(y, &stack);
+	push(x, & stack);
+	}
+	if(x < y){
+	push(y, &stack);
+	
+	//for(int i= 1; i<-length; i++){
+		//z = pop(&stack);
+		//w = pop(&stack);
+		//if(z == w){
+		counterleft++;
+		//}
+		//if(z!=w){
+		printf("[%d, %d)", counterright-counterleft-1, counterright-1);
+		//push(z-1, &stack);
+		//push(w-1, &stack);
+		//}
+	//}
+
+
+	countposition--;
+	}
+countposition;
+}
+
+
+
+
+
+
+  return 0;
+}
+
